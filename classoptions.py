@@ -12,7 +12,7 @@ day8 = 'Coding , English, Gym, French'
 
 
 print("What classes do I have today?")
-print("")
+print("")  
 print("1")
 print("2")
 print("3")
