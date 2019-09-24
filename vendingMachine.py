@@ -62,6 +62,7 @@ welcomeMessage = input("Welcome to the vending machine, please type 'Yes' and th
 
 
 if welcomeMessage == 'no':
+	print("Goodbye")
 	sys.exit()
 elif welcomeMessage == 'yes':
 	def vmContent():
@@ -91,13 +92,13 @@ vmContent()
 
 
 
-while True:
-    selection = input("Please choose an item location \n")
-    if 'A1' or 'A2' or 'A3' not in selection:
-        print("Enter valid selection")
-        break
-    else:
-    	print("insert payment")
+#while True:
+#    selection = input("Please choose an item location \n")
+#    if 'A1' or 'A2' or 'A3' not in selection:
+#        print("Enter valid selection")
+#        break
+#    elif selection == 'A1':
+#    	print("insert payment")
 
 
 
