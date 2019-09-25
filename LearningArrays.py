@@ -79,32 +79,32 @@ vmRowSize = 2
 vm = [
     {
         "loc": "A1",
-        "price": 1.00,
+        "price": "1.00",
         "item": "chips"
     },
     {
         "loc": "A2",
-        "price": 1.00,
+        "price": "1.00",
         "item": "kitkat"
     },
     {
         "loc": "B1",
-        "price": 1.50,
+        "price": "1.50",
         "item": "mars bar"
     },
     {
         "loc": "B2",
-        "price": 2.00,
+        "price": "2.00",
         "item": "gummies"
     },
     {
         "loc": "C1",
-        "price": 3.00,
+        "price": "3.00",
         "item": "oreos"
     },
     {
         "loc": "C2",
-        "price": 2.50,
+        "price": "2.50",
         "item": "welches"
     }
 ]
