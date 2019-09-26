@@ -6,47 +6,56 @@ vm = [
 	{
 		"loca": "A1",
 		"price": "1.50",
-		"item": "Lays Chips"
+		"item": "Lays Chips",
+		"stock": "10"
 	},
 	{
 		"loca": "A2",
 		"price": "1.50",
-		"item": "Ketchup Chips"
+		"item": "Ketchup Chips",
+		"stock": "10"
 	},
 	{
 		"loca": "A3",
 		"price": "1.50",
-		"item": "Ms. Vickeys"
+		"item": "Ms. Vickeys",
+		"stock": "10"
 	},
 	{
 		"loca": "B1",
 		"price": "2.50",
-		"item": "Mars Bar"
+		"item": "Mars Bar",
+		"stock": "10"
 	},
 	{
 		"loca": "B2",
 		"price": "2.50",
-		"item": "KitKat"
+		"item": "KitKat",
+		"stock": "10"
 	},
 	{
 		"loca": "B3",
 		"price": "2.50",
-		"item": "Coffee Crisp"
+		"item": "Coffee Crisp",
+		"stock": "10"
 	},
 	{
 		"loca": "C1",
 		"price": "1.50",
-		"item": "Perrier"
+		"item": "Perrier",
+		"stock": "10"
 	},
 	{
 		"loca": "C2",
 		"price": "1.75",
-		"item": "Chocolate Milk"
+		"item": "Chocolate Milk",
+		"stock": "10"
 	},
 	{
 		"loca": "C3",
 		"price": "1.00",
-		"item": "Water"
+		"item": "Water",
+		"stock": "10"
 	}
 ]
 
@@ -59,30 +68,41 @@ def vmContent():
 			print("------------------")
 			count = 0
 
-		print(f"{item['loca']}: {item['item']} ....... {item['price']}")
+		print(f"{item['loca']}: {item['item']} ....... {item['price']} ({item['stock']})")
 		count += 1				
 			# += means "add"
 	print("------------------")
 
 vmContent()
 
-selection = input("What item woul you like? Choose a location.\n")
+
+selection = input("What item would you like? Choose a location.\n")
+count = 0
+invalidInput = True
+
 
 for item in vm: 
 	loc = item['loca']
 	price = item['price']
+	stock = item['stock']
+	item = item['item']
 
 	if selection == loc:
 		print(price)
 		amount = int(input("How many would you like?\n"))
 		totalprice = amount*float(price)
 		print("Your total for today is $" + str(totalprice))
-		theBag = int(input("How much cash you got on you?\n"))
+
+		print("Please insert payment.")
+		theBag = int(input("$"))
 
 		if float(theBag) >= totalprice:
 			change = float(theBag) - totalprice
 			print("Your change is $" + str(change))
-			print("Thankyou for your purchases")	
+			stockleft = float(stock) - amount
+			print("There are " + str(stockleft) + " " + item + " left in stock.")
+			print("Thankyou for your purchases")
+			break	
 
 		elif float(theBag) < totalprice:
 			broke = input("You cannot afford that many items, would you like to buy less items? (y/n)\n")
@@ -94,10 +114,18 @@ for item in vm:
 				change2 = int(theBag) - totalprice2
 				print("Your change is $" + str(change2))
 				print("Thankyou for your purchases.")
+				break
 
 			elif broke == "n":
 				print("Bye broke boy")
 				sys.exit()
+
+	if count == len(vm) - 1:
+		print("That is an invald item location.")
+
+
+
+	count += 1
 
 
 
