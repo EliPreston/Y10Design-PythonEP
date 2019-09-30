@@ -119,7 +119,7 @@ for item in vm:
 				break
 
 			elif broke == "n":
-				print("Bye broke boy")
+				print("Have a good day random citizen, and come back soon.")
 				sys.exit()
 
 	if count == len(vm) - 1:
