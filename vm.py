@@ -76,10 +76,9 @@ def vmContent():
 vmContent()
 
 
-selection = input("What item would you like? Choose a location.\n")
+selection = input("All items are in stock. What item would you like? Choose a location.\n")
 count = 0
 invalidInput = True
-
 
 for item in vm: 
 	loc = item['loca']
@@ -90,9 +89,12 @@ for item in vm:
 	if selection == loc:
 		print(price)
 		amount = int(input("How many would you like?\n"))
+		if amount > float(stock):
+			print("We do not have that many in stock.")
+			sys.exit()
+
 		totalprice = amount*float(price)
 		print("Your total for today is $" + str(totalprice))
-
 		print("Please insert payment.")
 		theBag = int(input("$"))
 
@@ -124,9 +126,7 @@ for item in vm:
 		print("That is an invald item location.")
 
 
-
 	count += 1
-
 
 
 
