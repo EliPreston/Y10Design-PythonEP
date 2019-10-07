@@ -1,0 +1,31 @@
+'''
+- simple program to demo using a web API with requests Python module
+- secondary function to demo how to write out received data to an HTML file 
+- 
+'''
+# Find APIs at - https://apilist.fun/
+
+
+
+
+
+
+
+
+
+
+
+# use API to get place info
+
+# if API call is correct
+    # if API call is correct
+    # response comes in as byte data type
+
+    # decode to str
+
+
+    # writeHTML(data_as_str)  # call function to write string data to HTML file
+    # print(data_as_str)
+    # load as a JSON to access specific data more easily
+    # pprint.pprint(datajson)
+    # print(datajson)
