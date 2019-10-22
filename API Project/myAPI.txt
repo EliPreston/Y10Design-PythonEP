@@ -55,3 +55,27 @@
     #                     'rgba(153, 102, 255, 0.2)',
     #                     'rgba(255, 159, 64, 0.2)'
     #                 ],
+
+
+
+
+    # newColor2015 = []
+    # color2015 = dates[:53]
+    # print(color2015)
+
+    # for i in color2015:
+    #     print(i)
+    #     newColor2015.append("'rgba(255, 0, 0, 1)'")
+    # print(newColor2015)
+
+    # print(closingPrices)
+    # print(dates)
+
+
+
+
+    ## TODAY October 17th 2019
+
+    #backgroundColor: [""" + "'rgba(0, 255, 0, 1)',"*len(dates) + """],
+
+    ##########
