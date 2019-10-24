@@ -79,3 +79,59 @@
     #backgroundColor: [""" + "'rgba(0, 255, 0, 1)',"*len(dates) + """],
 
     ##########
+
+
+
+
+
+
+
+
+    <div class="headerAPI" id="home">
+        <p id="big"><b>Apple API Display</b></p>
+        <p id="small">This website page is displaying data from an Apple API.</p>
+        <p></p>
+    </div>
+
+    
+    <canvas id="myChart" width="300" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+    
+        type: 'bar',
+        data: {
+            labels: """ + "".join(str(dates)) + """,
+            datasets: [{
+                label: 'Closing Prices of Apple From 2014 to Present Day (In $)',
+                
+                data: """ + "".join(str(closingPrices)) + """,
+                backgroundColor: [""" + ",".join(bgColors) + """],
+                
+                borderColor: [
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+        options: {     
+            layout: {
+                padding: {
+                    left: 50,
+                    right: 50,
+                    top: 50,
+                    bottom: 50
+                }
+            }
+        }
+    });

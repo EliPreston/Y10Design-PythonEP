@@ -1,6 +1,6 @@
 # Eli Preston
 # Upper Canada College
-# This program displays the stock closing prices of APPLE from 2014 to 2019 in a bar graph using Chart js.
+# This program displays the stock closing prices of APPLE from 2014 to 2019 in a line graph using Chart js.
 
 import requests
 import json
@@ -8,7 +8,7 @@ import pprint
 
 
 
-def writeHTML(data, closingPrices, dates):
+def writeHTML(data, closingPrices, dates, vwap):
     myfile = open("appleAPI.html","w")
     myfile.write("""
     
@@ -29,8 +29,6 @@ def writeHTML(data, closingPrices, dates):
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </ul>
 
-
-    
     """)
 
 
@@ -92,9 +90,11 @@ def writeHTML(data, closingPrices, dates):
         
         <div class="headerAPI" id="home">
             <p id="big"><b>Apple API Display</b></p>
-            <p id="small">This website is displaying data from an Apple API.</p>
+            <p id="small">This website page is displaying data from an Apple API.</p>
             <p></p>
         </div>
+
+        <p class="headingtext"> The below graph shows Apple's stock closing prices</p>
 
         
         <canvas id="myChart" width="300" height="200"></canvas>
@@ -108,7 +108,7 @@ def writeHTML(data, closingPrices, dates):
             data: {
                 labels: """ + "".join(str(dates)) + """,
                 datasets: [{
-                    label: 'Closing Prices of Apple From 2014 to Present Day (In $$$)',
+                    label: 'Closing Prices of Apple From 2014 to Present Day (In $)',
                     
                     data: """ + "".join(str(closingPrices)) + """,
                     backgroundColor: [""" + ",".join(bgColors) + """],
@@ -144,11 +144,27 @@ def writeHTML(data, closingPrices, dates):
 
         <body>
             
+            <hr>
+
+            <button class="button button5">This part is being worked on. (click me)</button>
+
+            <hr>
+            
             <div class="rowapi" id="rowapi">
 
+                
+                <div class="column">
+                    <a href="https://financialmodelingprep.com/developer/docs/" style="text-decoration:none;" target="_blank">
+                    <img src="../HTML/ImagesHTML/apiuseddoc.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                    <div class="overlay">
+                    <div class="text">Website API Found On</div>
+                    </div>
+                </div>
+                
+                
                 <div class="column">
                     <a href="https://financialmodelingprep.com/api/v3/historical-price-full/AAPL" style="text-decoration:none;" target="_blank">
-                    <img src="../HTML/ImagesHTML/apiuseddoc.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                    <img src="../HTML/ImagesHTML/apiImage.png" style="width:100%" onclick="" class="hover-shadow cursor">
                     <div class="overlay">
                     <div class="text">API Used</div>
                     </div>
@@ -165,30 +181,122 @@ def writeHTML(data, closingPrices, dates):
 
 
                 <div class="column">
-                    <a href="https://github.com/EliPreston" style="text-decoration:none;">
-                    <img src="../HTML/ImagesHTML/github-logo.jpeg" style="width:100%" onclick="" class="hover-shadow cursor">
+                    <a href="https://github.com/EliPreston/Y10Design-PythonEP/tree/master/API%20Project" style="text-decoration:none;" target="_blank">
+                    <img src="../HTML/ImagesHTML/fullblackgithubbackground.png" style="width:100%" onclick="" class="hover-shadow cursor">
                     <div class="overlay">
-                    <div class="text">GitHub</div>
+                    <div class="text">GitHub; API Files</div>
                     </div>
                 </div>
-            
-                
-                <div class="column">
-                    <a href="https://sites.google.com/ucc.on.ca/y10design-epres" style="text-decoration:none;">
-                    <img src="../HTML/ImagesHTML/googlesitesnew99.png" style="width:100%" onclick="" class="hover-shadow cursor">
-                    <div class="overlay">
-                    <div class="text">Google Site</div>
-                    </div>
-                </div>
-            
+   
 
-            </div>
-            
+            </div>    
         </body>
 
     </html>
     """)
     myfile.close()
+
+
+#######################################
+    myfile2 = open("appleAPIpt2.html","w")
+    myfile2.write("""
+   
+    <!DOCTYPE html>
+    <html>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <head>
+    
+    <title>API VWAP/LABEL </title>
+    
+    <link rel="stylesheet" href="../HTML/homestyle.css">
+    <link rel='icon' href='favicon (1).ico' type='image/x-icon'/ >
+
+
+    <ul>
+        <li><a href="../HTML/eli.html" id="special"class="left" style="float:left;">Home</a></li>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </ul>
+   
+   """)
+   
+   
+#######################################
+    myfile2.write("""
+
+
+<div class="headerAPI" id="home">
+    <p id="big"><b>Apple API Display</b></p>
+    <p id="small">This website page is displaying data from an Apple API.</p>
+    <p></p>
+</div>
+
+<p class="headingtext"> This is the VWAP (volume weighted average price) data.</p>
+<p class="headingtext1"> Scroll down to view. </p>
+
+<p class="vwaptext">Volume Weighted Average Prices: """ + "".join(str(vwap)) + """</p>
+
+
+
+
+
+
+
+
+    </script>
+    </head>
+
+
+    <body>
+        
+        <hr>
+        
+        <div class="rowapi" id="rowapi">
+
+            
+            <div class="column">
+                <a href="https://financialmodelingprep.com/developer/docs/" style="text-decoration:none;" target="_blank">
+                <img src="../HTML/ImagesHTML/apiuseddoc.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                <div class="overlay">
+                <div class="text">Website API Found On</div>
+                </div>
+            </div>
+            
+            
+            <div class="column">
+                <a href="https://financialmodelingprep.com/api/v3/historical-price-full/AAPL" style="text-decoration:none;" target="_blank">
+                <img src="../HTML/ImagesHTML/apiImage.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                <div class="overlay">
+                <div class="text">API Used</div>
+                </div>
+            </div>
+        
+            
+            <div class="column">
+                <a href="https://www.chartjs.org/docs/latest/" style="text-decoration:none;" target="_blank">
+                <img src="../HTML/ImagesHTML/gettingstarted.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                <div class="overlay">
+                <div class="text">Chart JS; Used For Graph</div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <a href="https://github.com/EliPreston/Y10Design-PythonEP/tree/master/API%20Project" style="text-decoration:none;" target="_blank">
+                <img src="../HTML/ImagesHTML/fullblackgithubbackground.png" style="width:100%" onclick="" class="hover-shadow cursor">
+                <div class="overlay">
+                <div class="text">GitHub; API Files</div>
+                </div>
+            </div>
+
+
+        </div>    
+    </body>
+
+</html>
+
+""")
+# myfile2.close()
 
 
 
@@ -210,20 +318,22 @@ def main():
         closingPrices = []
         dates = []
         changes = []
+        vwap = []
 
 
         for point in dataPoints:
-            print(f"Date: {point['label']} \n\tOpening Price: {point['open']} \n\tClosing Price: {point['close']} \n\tChange: {point['change']} \n\n")
+            print(f"Date: {point['date']} \n\tOpening Price: {point['open']} \n\tClosing Price: {point['close']} \n\tChange: {point['change']} \n\tVWAP: {point['vwap']} \n\tLabel Date: {point['label']}\n")
             closingPrices.append(point["close"])
             dates.append(point["date"])
             changes.append(point["change"])
+            vwap.append(point["vwap"])
 
             
-        writeHTML(data_as_str, closingPrices, dates)
+        writeHTML(data_as_str, closingPrices, dates, vwap)
 
     else:
         data = "Error has occured"
-        writeHTML(data, [], [])
+        writeHTML(data, [], [], [])
 
 main()
 
