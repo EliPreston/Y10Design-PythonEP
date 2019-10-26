@@ -8,7 +8,7 @@ import pprint
 
 
 
-def writeHTML(data, closingPrices, dates, vwap):
+def writeHTML(data, closingPrices, dates, vwapPoints):
     myfile = open("appleAPI.html","w")
     myfile.write("""
     
@@ -85,6 +85,7 @@ def writeHTML(data, closingPrices, dates, vwap):
     print(eighteen)
     print(nineteen)
 
+    # print(vwapPoints)
 
     myfile.write("""
         
@@ -146,7 +147,7 @@ def writeHTML(data, closingPrices, dates, vwap):
             
             <hr>
 
-            <button class="button button5">This part is being worked on. (click me)</button>
+            <a href="appleAPIpt2.html" class="button button5" target="_blank">Volume Weighted Average Price Data. (click me)</a>
 
             <hr>
             
@@ -234,7 +235,8 @@ def writeHTML(data, closingPrices, dates, vwap):
 <p class="headingtext"> This is the VWAP (volume weighted average price) data.</p>
 <p class="headingtext1"> Scroll down to view. </p>
 
-<p class="vwaptext">Volume Weighted Average Prices: """ + "".join(str(vwap)) + """</p>
+<p class="vwaptext">Volume Weighted Average Prices: """ + "".join(str(vwapPoints)) + """</p>
+<p class="vwaptext">Dates: """ + "".join(str(dates)) + """</p>
 
 
 
@@ -318,7 +320,8 @@ def main():
         closingPrices = []
         dates = []
         changes = []
-        vwap = []
+        vwapPoints = []
+        vwapDates = []
 
 
         for point in dataPoints:
@@ -326,10 +329,18 @@ def main():
             closingPrices.append(point["close"])
             dates.append(point["date"])
             changes.append(point["change"])
-            vwap.append(point["vwap"])
+            vwapPoints.append(point["vwap"])
+
+            vwapDates.append(point["date"])
+            vwapDates.append(point["date"])
+            # print(vwapDates)
+
+        
+
+
 
             
-        writeHTML(data_as_str, closingPrices, dates, vwap)
+        writeHTML(data_as_str, closingPrices, dates, vwapPoints)
 
     else:
         data = "Error has occured"
