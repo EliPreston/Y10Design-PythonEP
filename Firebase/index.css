@@ -1,0 +1,26 @@
+body {
+  background-color: #24252a;
+  text-align: center;
+}
+
+div {
+  padding: 1.5%;
+}
+
+/* ^^^^ Sets all styles ^^^^  */
+
+.div1 {
+  padding: 1.5%;
+}
+
+#info {
+  background-color: darkgrey;
+  margin-top: 3ch;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+
+.btn-outline-dark {
+  margin: 0.5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

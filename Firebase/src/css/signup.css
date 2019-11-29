@@ -1,0 +1,25 @@
+.flex-container {
+  display: flex;
+  justify-content: center;
+  background-color: #111;
+  height: 35ch;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 50%;
+  margin-top: 60px;
+}
+
+.flex-container > div {
+  background-color: #111;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inputs {
+  border: none;
+  text-align: left;
+}

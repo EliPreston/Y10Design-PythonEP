@@ -1,0 +1,68 @@
+/* ***************************** */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 2ch;
+  background-color: #24252a;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logoName {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.navlinks a,
+.contact,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+}
+
+.navlinks li {
+  padding: 0px 20px;
+}
+
+.navlinks li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navlinks li a:hover {
+  color: #0088a9;
+}
+
+.contact {
+  padding: 9px 25px;
+  /* background-color: #31383a; */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.contact:hover {
+  background-color: rgba(146, 37, 37, 0.8);
+}

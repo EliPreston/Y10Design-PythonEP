@@ -1,0 +1,18 @@
+body,
+html {
+  background-color: #8d8f8f;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  padding: 0%;
+}
+
+/* ************** Specifics ************* */
