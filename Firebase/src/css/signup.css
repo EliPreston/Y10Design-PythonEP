@@ -1,7 +1,7 @@
 .flex-container {
   display: flex;
   justify-content: center;
-  background-color: #111;
+  background-color: blue;
   height: 35ch;
   flex-direction: column;
   margin: 0px auto;
@@ -10,7 +10,7 @@
 }
 
 .flex-container > div {
-  background-color: #111;
+  background-color: rgb(255, 0, 0);
   margin: 10px;
   text-align: center;
   line-height: 75px;
