@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/login.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="js/fb.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a class="logoName">Team Stats</a>
+      <nav>
+        <ul class="navlinks">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="signup.html">Signup</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+      <a class="contact" href="#">Contact</a>
+    </header>
+
+    <div class="flex-container">
+      <div class="signup" href="Login.html">Login</div>
+      <form class="input-parent">
+        <p>
+          <label class="labels">First Name</label>
+        </p>
+        <input class="inputs" type="text" />
+
+        <p>
+          <label class="labels">Last Name</label>
+        </p>
+        <input class="inputs" type="text" />
+
+        <p>
+          <label class="labels">Email</label>
+        </p>
+        <input class="inputs" type="text" />
+        <button type="button" onclick="signin()" class="btn btn-outline-dark">
+          Log in with Gmail
+        </button>
+      </form>
+    </div>
+  </body>
+
+  <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        userId = user.uid;
+        // window.location.replace("stats.html");
+      } else {
+        return;
+      }
+      // if (user == null) {
+      //   // document.getElementById("uid").innerHTML = "Unable to locate user ID";
+      //   console.log("not logged in");
+      //   return;
+      // } else {
+      //   userId = user.uid;
+      //   // document.getElementById("uid").innerHTML = "You are logged in";
+      //   // document.getElementById("wid").innerHTML = "You are logged in";
+      //   console.log(userId);
+      //   console.log("You are logged in");
+      // }
+    });
+
+    /////////////////// FUNCTIONS ///////////////////
+    function getData() {
+      var userId = document.getElementById("uid").innerHTML;
+      firebase
+        .database()
+        .ref("/" + userId)
+        .once("value", function(snapshot) {
+          document.getElementById("myData").innerHTML = snapshot.val().teacher;
+          console.log(snapshot.val().teacher);
+          console.log(snapshot.val().email);
+        });
+    }
+
+    function setData() {
+      var x = document.getElementById("newName").value;
+      var x_email = x + "@gmail.com";
+
+      document.getElementById("myName").innerHTML = x;
+      firebase
+        .database()
+        .ref("/" + userId)
+        .set({
+          teacher: x,
+          email: x_email
+        });
+    }
+
+    function signin() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(result => {
+          window.location.replace("stats.html");
+        });
+    }
+
+    // var tr = document.createElement("tr");
+
+    // var td_1 = document.createElement("td");
+    // var td_2 = document.createElement("td");
+
+    // var text_1 = document.createTextNode("Name");
+    // var text_2 = document.createTextNode("Age");
+
+    // td_1.appendChild(text_1);
+    // td_2.appendChild(text_2);
+    // tr.appendChild(td_1);
+    // tr.appendChild(td_2);
+
+    // table.appendChild(tr);
+
+    // var tr_2 = document.createElement("tr");
+
+    // var td_3 = document.createElement("td");
+    // var td_4 = document.createElement("td");
+
+    // var text_3 = document.createTextNode(userName);
+    // var text_4 = document.createTextNode(age);
+
+    // td_3.appendChild(text_3);
+    // td_4.appendChild(text_4);
+    // tr_2.appendChild(td_3);
+    // tr_2.appendChild(td_4);
+
+    // table.appendChild(tr_2);
+
+    // document.body.appendChild(table);
+  </script>
+</html>
