@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-    <script src="js/fb.js"></script>
+    <script src="js/login.js"></script>
   </head>
 
   <body>
@@ -35,21 +35,29 @@
     <div class="flex-container">
       <div class="signup" href="Login.html">Login</div>
       <form class="input-parent">
-        <p>
-          <label class="labels">First Name</label>
-        </p>
-        <input class="inputs" type="text" />
-
-        <p>
-          <label class="labels">Last Name</label>
-        </p>
-        <input class="inputs" type="text" />
-
-        <p>
-          <label class="labels">Email</label>
-        </p>
-        <input class="inputs" type="text" />
-        <button type="button" onclick="signin()" class="btn btn-outline-dark">
+        <input
+          class="inputs"
+          type="text"
+          id="firstName"
+          placeholder="First Name"
+        />
+        <input
+          class="inputs"
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
+        />
+        <input class="inputs" type="email" id="email" placeholder="Email" />
+        <input
+          class="inputs"
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
+        <button type="button" onclick="signin()" class="loginbtn">
+          Log In
+        </button>
+        <button type="button" onclick="signin()" class="loginbtn">
           Log in with Gmail
         </button>
       </form>

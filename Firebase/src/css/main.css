@@ -1,6 +1,8 @@
-body,
+body {
+  background-color: white;
+}
 html {
-  background-color: #8d8f8f;
+  background-color: #ffffff;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   margin: 0;

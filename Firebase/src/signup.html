@@ -35,30 +35,32 @@
     <div class="flex-container">
       <div class="signup" href="login.html">Signup</div>
       <form class="input-parent">
-        <p>
-          <label class="labels">First Name</label>
-        </p>
-        <input class="inputs" type="text" id="firstName" />
+        <input
+          class="inputs"
+          type="text"
+          id="firstName"
+          placeholder="First Name"
+        />
+        <input
+          class="inputs"
+          type="text"
+          id="lastName"
+          placeholder="Last Name"
+        />
+        <input class="inputs" type="email" id="email" placeholder="Email" />
+        <input
+          class="inputs"
+          type="password"
+          id="password"
+          placeholder="Password"
+        />
 
-        <p>
-          <label class="labels">Last Name</label>
-        </p>
-        <input class="inputs" type="text" id="lastName" />
-
-        <p>
-          <label class="labels">Email</label>
-        </p>
-        <input class="inputs" type="email" id="email" />
-
-        <p>
-          <label class="labels">Password</label>
-        </p>
-        <input class="inputs" type="password" id="password" />
-
-        <button type="button" onclick="signup()">Signup</button>
+        <button type="button" onclick="signup()" class="signupbtn">
+          Signup
+        </button>
       </form>
     </div>
 
-    <script src="js/fb.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>

@@ -6,28 +6,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
     <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/stats.css"
+    />
+
+    <link
       href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
       rel="stylesheet"
     />
-    <script src="main.js"></script>
-    <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      td,
-      th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-    </style>
   </head>
 
   <body>
@@ -36,23 +24,103 @@
       <nav>
         <ul class="navlinks">
           <li><a href="home.html">Home</a></li>
-          <li><a href="signup.html">Signup</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="Stats.html">Stats</a></li>
+          <li><a href="Account.html">My Account</a></li>
         </ul>
       </nav>
       <a class="contact" href="#">Contact</a>
     </header>
-    <table>
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-    </table>
+    <!-- <div class="flex-container01">
+      <p>TEXT</p>
+      <p>TEXT</p>
+    </div> -->
+    <div class="flex-container02">
+      <table>
+        <tr>
+          <th>Team</th>
+          <th>G.P</th>
+          <th>Points</th>
+          <th>A.S.O.N</th>
+          <th>A.H</th>
+          <th>Possession</th>
+          <th>Save %</th>
+        </tr>
+        <tr>
+          <td>Leaside</td>
+          <td id="tgp"></td>
+          <td id="tpts">37</td>
+          <td id="tason">31</td>
+          <td id="tah">28</td>
+          <td id="tpp">78</td>
+          <td id="tsp">.900</td>
+        </tr>
+        <tr>
+          <td>Goulding</td>
+          <td>20</td>
+          <td>37</td>
+          <td>31</td>
+          <td>28</td>
+          <td>78</td>
+          <td>.900</td>
+        </tr>
+        <tr>
+          <td>Ted Reeve</td>
+          <td>20</td>
+          <td>37</td>
+          <td>31</td>
+          <td>28</td>
+          <td>78</td>
+          <td>.900</td>
+        </tr>
+        <tr>
+          <td>Leaside</td>
+          <td>20</td>
+          <td>37</td>
+          <td>31</td>
+          <td>28</td>
+          <td>78</td>
+          <td>.900</td>
+        </tr>
+        <tr>
+          <td>Aeros</td>
+          <td>20</td>
+          <td>37</td>
+          <td>31</td>
+          <td>28</td>
+          <td>78</td>
+          <td>.900</td>
+        </tr>
+      </table>
+    </div>
+    <!-- <div class="flex-container03">
+      <button type="button" class="btn btn-outline-dark">
+        Update Database
+      </button>
+    </div> -->
+
+    <div class="flex-container04">
+      <select class="select" id="teamSelect">
+        <option value="Team 1">Team 1</option>
+        <option value="Team 2">Team 2</option>
+        <option value="Team 3">Team 3</option>
+        <option value="Team 5">Team 5</option>
+        <option value="Team 6">Team 6</option>
+      </select>
+      <input class="inputs" type="text" id="gp" placeholder="Games Played" />
+      <input class="inputs" type="text" id="pts" placeholder="Points" />
+      <input class="inputs" type="text" id="ason" placeholder="A.S.O.N" />
+      <input class="inputs" type="text" id="ah" placeholder="A.H" />
+      <input class="inputs" type="text" id="pp" placeholder="Puck Possession" />
+      <input class="inputs" type="text" id="sp" placeholder="Save %" />
+
+      <button type="button" onclick="update()" class="btns button">
+        Update Database
+      </button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+    <script src="main.js"></script>
+    <script src="js/stats.js"></script>
   </body>
 </html>

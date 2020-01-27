@@ -24,7 +24,7 @@ const signup = () => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .catch(err => {
-      alert(`Uh oh! Poopee! | ${err.code}: ${err.message}`);
+      alert(`Uh oh! ${err.code}: ${err.message}`);
       ableToCreateUser = false;
     })
     .then(user => {
@@ -44,6 +44,9 @@ const signup = () => {
           .ref("/users")
           .push(newUser);
       }
+    })
+    .then(() => {
+      window.location.href = "stats.html";
     });
   //   const firstName = document.getElementById("firstName").value;
   //   const lastName = document.getElementById("lastName").value;

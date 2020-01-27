@@ -1,0 +1,83 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #2b2b2b;
+  text-align: center;
+  padding: 8px;
+  background-color: #222d4b;
+}
+
+td {
+  background-color: #dddddd;
+}
+
+.flex-container01 {
+  padding: 4ch;
+  display: flex;
+  align-content: center;
+  background: rgb(39, 38, 38);
+}
+
+.flex-container02 {
+  padding: 8ch;
+  display: flex;
+  align-content: center;
+  background-color: #27313b;
+}
+
+.flex-container03 {
+  padding: 8ch;
+  display: flexbox;
+  align-content: center;
+  background-color: #27313b;
+}
+
+.flex-container04 {
+  padding: 8ch;
+  padding-top: 4ch;
+  display: flex;
+  align-content: left;
+  background-color: #293642;
+  flex-direction: column;
+  padding-bottom: 2ch;
+}
+
+.inputs {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 18ch;
+}
+
+.button {
+  background-color: white;
+  /* border: 2px solid #008cba; */
+  color: black;
+  /* padding: 16px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.btns {
+  width: 16.5ch;
+  margin-top: 20px;
+}
+
+.select {
+  margin-bottom: 2px;
+  width: 18ch;
+}
