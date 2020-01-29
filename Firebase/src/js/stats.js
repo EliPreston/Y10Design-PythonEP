@@ -50,4 +50,83 @@ function update() {
   document.getElementById("sp").value = "";
 
   alert("Data Updated");
-} // end setdata
+  window.location.reload();
+  console.log("Updated");
+}
+
+function tableLoad() {
+  const teamSelect = document.getElementById("teamSelect");
+  const team = teamSelect.options[teamSelect.selectedIndex].value;
+
+  const array = [];
+
+  const ref = firebase.database().ref(team);
+  ref.once("value").then(_team => {
+    _team.forEach(_teamStats => {
+      const teamStats = _teamStats.val();
+
+      console.log(typeof teamStats);
+      var obj = JSON.parse(teamStats);
+      console.log(obj);
+      array.push(teamStats);
+      //                                                      \\
+      //                                                      \\
+      //                                                      \\
+      //                                                      \\
+
+      // console.log(AGP, APTS, AASON, AAH, AP, ASP);
+    });
+  });
+
+  console.log(array);
+  // const arrayLength = array.length;
+
+  // for (var i = 0; i < arrayLength; i++);
+  // {
+  //   console.log(array[i]);
+  // }
+  // console.log(array);
+
+  const AGP = document.getElementById("AGP");
+  const APTS = document.getElementById("APTS");
+  const AASON = document.getElementById("AASON");
+  const AAH = document.getElementById("AAH");
+  const AP = document.getElementById("AP");
+  const ASP = document.getElementById("ASP");
+
+  // ||||||||||||||||||||||||||||||||||||\\
+
+  document.getElementById("AGP").value;
+  document.getElementById("APTS");
+  document.getElementById("AASON");
+  document.getElementById("AAH");
+  document.getElementById("AP");
+  document.getElementById("ASP");
+}
+
+// function tableLoad() {
+//   const fragment = document.createDocumentFragment();
+//   const table = document.createElement("table");
+
+//   const query = firebase.database().ref("Team 1");
+
+//   query.once("value").then(function(snapshot) {
+//     snapshot.forEach(function(childSnapshot) {
+//       var tr = document.createElement("tr");
+//       var trValues = [childSnapshot.key, childSnapshot.val()];
+
+//       for (var i = 0; i < trValues.length; i++) {
+//         var td = document.createElement("td");
+
+//         td.textContent = trValues[i];
+//         tr.appendChild(td);
+//       }
+
+//       table.appendChild(tr);
+//     });
+//   });
+
+//   fragment.appendChild(table);
+//   document.body.appendChild(fragment);
+//   console.log("bruh");
+// }
