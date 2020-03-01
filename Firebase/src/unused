@@ -1,0 +1,349 @@
+    // const team01 = document.getElementsByClassName("Team01");
+    // console.log(team01.item(5).innerHTML);
+
+    // const z = document.getElementsByClassName("test");
+    // console.log(z.item(0).innerHTML);
+    // for (const agp of agps) {
+
+    //   console.log(agp);
+    // }
+
+    // for (i = 0; i < agps.length; i++) {
+    //   console.log(agps[i]);
+    //   console.log(array[i]);
+    // }
+
+ 
+ 
+ 
+  // const arrayLength = array.length;
+  // for (var i = 0; i < arrayLength; i++);
+  // {
+  //   console.log(array[i]);
+  // }
+  // console.log(array);
+
+  // const AGP = document.getElementById("AGP");
+  // const APTS = document.getElementById("APTS");
+  // const AASON = document.getElementById("AASON");
+  // const AAH = document.getElementById("AAH");
+  // const AP = document.getElementById("AP");
+  // const ASP = document.getElementById("ASP");
+
+  // ||||||||||||||||||||||||||||||||||||\\
+
+  // document.getElementById("AGP").value = array[0];
+  // document.getElementById("APTS").value = array[1];
+  // document.getElementById("AASON").value;
+  // document.getElementById("AAH").value;
+  // document.getElementById("AP").value;
+  // document.getElementById("ASP").value;
+
+
+
+
+
+// function tableLoad() {
+//   const fragment = document.createDocumentFragment();
+//   const table = document.createElement("table");
+
+//   const query = firebase.database().ref("Team 1");
+
+//   query.once("value").then(function(snapshot) {
+//     snapshot.forEach(function(childSnapshot) {
+//       var tr = document.createElement("tr");
+//       var trValues = [childSnapshot.key, childSnapshot.val()];
+
+//       for (var i = 0; i < trValues.length; i++) {
+//         var td = document.createElement("td");
+
+//         td.textContent = trValues[i];
+//         tr.appendChild(td);
+//       }
+
+//       table.appendChild(tr);
+//     });
+//   });
+
+//   fragment.appendChild(table);
+//   document.body.appendChild(fragment);
+//   console.log("bruh");
+// }
+
+
+
+    // console.log(array);
+
+    // for (i = 0; i < array.length; i++) {
+    //   console.log(array[i]);
+    // }
+
+    // stat1 = array[0];
+    // stat2 = array[1];
+    // stat3 = array[2];
+    // stat4 = array[3];
+    // stat5 = array[4];
+    // stat6 = array[5];
+    // stat7 = array[6];
+
+
+
+
+    // var myTable = document.getElementById("myTable");
+    // myTable.rows[1].cells[1].innerHTML = array[0];
+    // myTable.rows[1].cells[2].innerHTML = array[1];
+    // myTable.rows[1].cells[3].innerHTML = array[2];
+    // myTable.rows[1].cells[4].innerHTML = array[3];
+    // myTable.rows[1].cells[5].innerHTML = array[4];
+    // myTable.rows[1].cells[6].innerHTML = "." + array[5];
+
+    // myTable.rows[2].cells[1].innerHTML = array[0];
+    // myTable.rows[2].cells[2].innerHTML = array[1];
+    // myTable.rows[2].cells[3].innerHTML = array[2];
+    // myTable.rows[2].cells[4].innerHTML = array[3];
+    // myTable.rows[2].cells[5].innerHTML = array[4];
+    // myTable.rows[2].cells[6].innerHTML = "." + array[5];
+
+    // myTable.rows[3].cells[1].innerHTML = array[0];
+    // myTable.rows[3].cells[2].innerHTML = array[1];
+    // myTable.rows[3].cells[3].innerHTML = array[2];
+    // myTable.rows[3].cells[4].innerHTML = array[3];
+    // myTable.rows[3].cells[5].innerHTML = array[4];
+    // myTable.rows[3].cells[6].innerHTML = "." + array[5];
+
+    // myTable.rows[4].cells[1].innerHTML = array[0];
+    // myTable.rows[4].cells[2].innerHTML = array[1];
+    // myTable.rows[4].cells[3].innerHTML = array[2];
+    // myTable.rows[4].cells[4].innerHTML = array[3];
+    // myTable.rows[4].cells[5].innerHTML = array[4];
+    // myTable.rows[4].cells[6].innerHTML = "." + array[5];
+
+    // myTable.rows[5].cells[1].innerHTML = array[0];
+    // myTable.rows[5].cells[2].innerHTML = array[1];
+    // myTable.rows[5].cells[3].innerHTML = array[2];
+    // myTable.rows[5].cells[4].innerHTML = array[3];
+    // myTable.rows[5].cells[5].innerHTML = array[4];
+    // myTable.rows[5].cells[6].innerHTML = "." + array[5];
+
+
+
+
+    // for (i = 0; i < 6; i++) {
+    //   const team01 = document.getElementsByClassName("Team01");
+    //   console.log(team01.item(i).innerHTML);
+    //   console.log(array[i]);
+    //   document.getElementsByClassName("Team01").value = array[i];
+    //   for each index of class elements array, replace vlaue with stat array at same index
+    // }
+
+    // for (i = 0; i < 6; i++) {
+    //   const team02 = document.getElementsByClassName("Team02");
+    //   console.log(team02.item(i).innerHTML);
+    // }
+
+    // for (i = 0; i < 6; i++) {
+    //   const team03 = document.getElementsByClassName("Team03");
+    //   console.log(team03.item(i).innerHTML);
+    // }
+
+    // for (i = 0; i < 6; i++) {
+    //   const team04 = document.getElementsByClassName("Team04");
+    //   console.log(team04.item(i).innerHTML);
+    // }
+
+    // for (i = 0; i < 6; i++) {
+    //   const team05 = document.getElementsByClassName("Team05");
+    //   console.log(team05.item(i).innerHTML);
+
+
+
+    // ----------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------
+    // ----------------------------------------Page Break--------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------------------------
+
+    // const APTS = document.getElementById("AGP");
+    // console.log(APTS);
+
+    // document.getElementById("AGP").value = "stat1";
+    // const APTS = document.getElementById("APTS");
+    // const AASON = document.getElementById("AASON");
+    // const AAH = document.getElementById("AAH");
+    // const AP = document.getElementById("AP");
+    // const ASP = document.getElementById("ASP");
+
+
+    function tableLoad() {
+  const database = firebase.database();
+  const teamSelect = document.getElementById("teamSelect");
+  const team = teamSelect.options[teamSelect.selectedIndex].value;
+  // const myTable = document.getElementById("myTable");
+
+  console.log("Stats From Database Below");
+  const array = [];
+  const ref = firebase.database().ref(team);
+  ref.once("value").then(_team => {
+    _team.forEach(_teamStats => {
+      const teamStats = _teamStats.val();
+
+      // console.log(teamStats);
+      var obj = JSON.parse(teamStats);
+      console.log(obj);
+      array.push(obj);
+
+      // ----------------------------------------------------------------------------------------------------
+      // ----------------------------------------------------------------------------------------------------
+      // ----------------------------------------Page Break--------------------------------------------------
+      // ----------------------------------------------------------------------------------------------------
+      // ----------------------------------------------------------------------------------------------------
+
+      // document.getElementsByClassName("Team01").innerHTML = holder;
+    });
+    console.log("hello");
+
+    console.log(array);
+
+    const teamSelect = document.getElementById("teamSelect");
+    const team = teamSelect.options[teamSelect.selectedIndex].value;
+    const myTable = document.getElementById("myTable");
+
+    if ((team.value = "Team 1")) {
+      myTable.rows[1].cells[1].innerHTML = array[0];
+      myTable.rows[1].cells[2].innerHTML = array[1];
+      myTable.rows[1].cells[3].innerHTML = array[2];
+      myTable.rows[1].cells[4].innerHTML = array[3];
+      myTable.rows[1].cells[5].innerHTML = array[4];
+      myTable.rows[1].cells[6].innerHTML = "." + array[5];
+      console.log("hello");
+    }
+
+    // if ((team = "Team 2")) {
+    //   myTable.rows[2].cells[1].innerHTML = array[0];
+    //   myTable.rows[2].cells[2].innerHTML = array[1];
+    //   myTable.rows[2].cells[3].innerHTML = array[2];
+    //   myTable.rows[2].cells[4].innerHTML = array[3];
+    //   myTable.rows[2].cells[5].innerHTML = array[4];
+    //   myTable.rows[2].cells[6].innerHTML = "." + array[5];
+    // }
+
+    // if ((team = "Team 3")) {
+    //   myTable.rows[1].cells[1].innerHTML = array[0];
+    //   myTable.rows[1].cells[2].innerHTML = array[1];
+    //   myTable.rows[1].cells[3].innerHTML = array[2];
+    //   myTable.rows[1].cells[4].innerHTML = array[3];
+    //   myTable.rows[1].cells[5].innerHTML = array[4];
+    //   myTable.rows[1].cells[6].innerHTML = "." + array[5];
+    // }
+
+    // if ((team = "Team 4")) {
+    //   myTable.rows[1].cells[1].innerHTML = array[0];
+    //   myTable.rows[1].cells[2].innerHTML = array[1];
+    //   myTable.rows[1].cells[3].innerHTML = array[2];
+    //   myTable.rows[1].cells[4].innerHTML = array[3];
+    //   myTable.rows[1].cells[5].innerHTML = array[4];
+    //   myTable.rows[1].cells[6].innerHTML = "." + array[5];
+    // }
+
+    // if ((team = "Team 5")) {
+    //   myTable.rows[1].cells[1].innerHTML = array[0];
+    //   myTable.rows[1].cells[2].innerHTML = array[1];
+    //   myTable.rows[1].cells[3].innerHTML = array[2];
+    //   myTable.rows[1].cells[4].innerHTML = array[3];
+    //   myTable.rows[1].cells[5].innerHTML = array[4];
+    //   myTable.rows[1].cells[6].innerHTML = "." + array[5];
+    // }
+
+    // if ((team = "Team 6")) {
+    //   myTable.rows[1].cells[1].innerHTML = array[0];
+    //   myTable.rows[1].cells[2].innerHTML = array[1];
+    //   myTable.rows[1].cells[3].innerHTML = array[2];
+    //   myTable.rows[1].cells[4].innerHTML = array[3];
+    //   myTable.rows[1].cells[5].innerHTML = array[4];
+    //   myTable.rows[1].cells[6].innerHTML = "." + array[5];
+    // }
+
+    // }
+
+    // change all class names inside each team to the team number, loop through values in stats and replace values for team
+    stRef = database.ref("Team 1");
+    console.log(stRef);
+  });
+
+  // as soon as page loads, get values from database and
+  // put them in the table
+  //
+  // could get all data from database
+  //
+  //
+  //
+}             
+
+
+
+
+// const signup = () => {
+//   let newUser = undefined;
+//   let ableToCreateUser = true;
+//   const email = document.getElementById("email").value;
+//   const password = document.getElementById("password").value;
+//   const passwordr = document.getElementById("passwordr").value;
+
+//   console.log(email, password, passwordr);
+
+//   firebase
+//     .auth()
+//     .createUserWithEmailAndPassword(email, password)
+//     .catch(err => {
+//       alert(`error | ${err.code}: ${err.message}`);
+//       ableToCreateUser = false;
+//     })
+//     .then(user => {
+//       if (ableToCreateUser) {
+//         console.log("HI");
+//         newUser = {
+//           email,
+//           password,
+//           passwordr
+//         };
+//       }
+//     })
+//     .then(() => {
+//       if (ableToCreateUser) {
+//         console.log("created user");
+//         firebase
+//           .database()
+//           .ref("/users")
+//           .push(newUser);
+//       }
+//     });
+// };
+
+// // Get the modal
+// var modal = document.getElementById("id01");
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// };
+
+//   LOGGED IN CHECK, IF LOGGED IN REDIRECT
+// const login = () => {
+//   firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       userId = user.uid;
+//       email = user.email;
+//       console.log(user.email);
+//       console.log(user.uid);
+//       // window.location.href = "stats.html";
+
+//       // document.getElementById("holder").innerHTML = `Email: ${email}`;
+//       // "Email: " + email;
+//     } else {
+//       console.log("not logged in");
+//       return;
+//     }
+//   });
+// };

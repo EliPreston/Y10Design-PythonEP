@@ -23,72 +23,76 @@
       <a class="logoName">Team Stats</a>
       <nav>
         <ul class="navlinks">
-          <li><a href="home.html">Home</a></li>
           <li><a href="Stats.html">Stats</a></li>
           <li><a href="Account.html">My Account</a></li>
         </ul>
       </nav>
-      <a class="contact" href="#">Contact</a>
-    </header>
+      <a
+      class="contact"
+      href="mailto:exampleEmail@gmail.com?subject=Important!&body=Hi!."
+      target="_blank"
+      rel="noopener noreferrer"
+      >Contact Us</a
+    >    </header>
     <!-- <div class="flex-container01">
       <p>TEXT</p>
       <p>TEXT</p>
     </div> -->
     <div class="flex-container02">
-      <table>
+      <table id="myTable">
         <tr>
           <th>Team</th>
           <th>G.P</th>
           <th>Points</th>
           <th>A.S.O.N</th>
           <th>A.H</th>
-          <th>Possession</th>
+          <th>P.P</th>
           <th>Save %</th>
         </tr>
         <tr>
           <td>Leaside</td>
-          <td id="AGP">20</td>
-          <td id="APTS">37</td>
-          <td id="AASON">31</td>
-          <td id="AAH">28</td>
-          <td id="AP">78</td>
-          <td id="ASP">.900</td>
+          <td class="Team01"></td>
+          <td class="Team01"></td>
+          <td class="Team01"></td>
+          <td class="Team01"></td>
+          <td class="Team01"></td>
+          <td class="Team01"></td>
         </tr>
         <tr>
           <td>Goulding</td>
-          <td id="AGP">20</td>
-          <td id="APTS">37</td>
-          <td id="AASON">31</td>
-          <td id="AAH">28</td>
-          <td id="AP">78</td>
-          <td id="ASP">.900</td>
+          <td class="Team02"></td>
+          <td class="Team02"></td>
+          <td class="Team02"></td>
+          <td class="Team02"></td>
+          <td class="Team02"></td>
+          <td class="Team02"></td>
         </tr>
         <tr>
           <td>Ted Reeve</td>
-          <td id="AGP">20</td>
-          <td id="APTS">37</td>
-          <td id="AASON">31</td>
-          <td id="AAH">28</td>
-          <td id="AP">78</td>
-          <td id="ASP">.900</td>
+          <td class="Team03"></td>
+          <td class="Team03"></td>
+          <td class="Team03"></td>
+          <td class="Team03"></td>
+          <td class="Team03"></td>
+          <td class="Team03"></td>
         </tr>
         <tr>
-          <td>Leaside</td>
-          <td id="AGP">20</td>
-          <td id="APTS">37</td>
-          <td id="AASON">31</td>
-          <td id="AAH">28</td>
-          <td id="AP">78</td>
-          <td id="ASP">.900</td>
+          <td>North Toronto</td>
+          <td class="Team04"></td>
+          <td class="Team04"></td>
+          <td class="Team04"></td>
+          <td class="Team04"></td>
+          <td class="Team04"></td>
+          <td class="Team04"></td>
         </tr>
         <tr>
           <td>Aeros</td>
-          <td id="AGP">20</td>
-          <td id="APTS">37</td>
-          <td id="AASON">31</td>
-          <td id="AAH">28</td>
-          <td id="AP">78</td>
-          <td id="ASP">.900</td>
+          <td class="Team05"></td>
+          <td class="Team05"></td>
+          <td class="Team05"></td>
+          <td class="Team05"></td>
+          <td class="Team05"></td>
+          <td class="Team05"></td>
         </tr>
       </table>
     </div>
@@ -100,11 +104,11 @@
 
     <div class="flex-container04">
       <select class="select" id="teamSelect">
-        <option value="Team 1">Team 1</option>
-        <option value="Team 2">Team 2</option>
-        <option value="Team 3">Team 3</option>
-        <option value="Team 5">Team 5</option>
-        <option value="Team 6">Team 6</option>
+        <option value="Team 1">Leaside</option>
+        <option value="Team 2">Goulding</option>
+        <option value="Team 3">Ted Reeve</option>
+        <option value="Team 4">North Toronto</option>
+        <option value="Team 5">Aeros</option>
       </select>
       <input class="inputs" type="text" id="gp" placeholder="Games Played" />
       <input class="inputs" type="text" id="pts" placeholder="Points" />
@@ -116,7 +120,41 @@
       <button type="button" onclick="update()" class="btns button">
         Update Database
       </button>
+      
     </div>
+
+    <div class="flex-container05">
+  
+
+      <table>
+        <tr>
+          <th>Stat Abbreviation</th>
+          <th>Definition/Explanation</th>
+        </tr>
+        <tr>
+          <td>G.P</td>
+          <td>This is an abbreviation for Games Played, meaning the number of games the corresponding team.</td>
+
+        </tr>
+        <tr>
+          <td>A.S.O.N</td>
+          <td>This abbreviation is for average shots on net, meaning the the number of times the goalie has to stop the puck from going in the net, or if the shot goes into the net.</td>
+        </tr>
+        <tr>
+          <td>A.H</td>
+          <td>This abbreviation is for the average number of hits a game for the specified team.</td>
+        </tr>
+        <tr>
+          <td>P.P</td>
+          <td>This is an abbreviation for Puck Percentage (averaged), this is an indicator for how much on average a tean has the puck.</td>
+        </tr>
+        <tr>
+          <td>Save %</td>
+          <td>This is simply the save percentage.</td>
+        </tr>
+          
+    </div>         
+
 
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>

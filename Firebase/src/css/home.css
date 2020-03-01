@@ -1,10 +1,72 @@
 .bdy {
-  margin: auto;
+  /* margin: auto; */
   background-color: white;
 }
 
 .img {
-  margin-top: 5ch;
+  margin-top: 7ch;
+  /* margin-right: 5ch;
+  margin-left: 5ch; */
   padding: 0px;
   width: 100%;
+  opacity: 50%;
+}
+
+.foot {
+  padding-top: 4ch;
+  padding-bottom: 3ch;
+  background-color: rgb(34, 49, 90);
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.infoText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5ch;
+}
+
+.container .btn {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(37, 62, 94);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn2 {
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(37, 62, 94);
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: rgb(41, 41, 41);
+}
+.container .btn2:hover {
+  background-color: rgb(41, 41, 41);
 }

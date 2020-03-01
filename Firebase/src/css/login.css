@@ -1,3 +1,7 @@
+.html {
+  background-color: #ffffff;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;

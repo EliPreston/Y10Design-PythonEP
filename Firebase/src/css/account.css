@@ -1,0 +1,51 @@
+.html {
+  background-color: #19647a;
+}
+
+.body {
+  background-color: #19647a;
+  height: 785px;
+}
+
+#container {
+  background-color: #19647a;
+  text-align: left;
+  padding: 4ch;
+  /* display: flex; */
+  align-content: left;
+}
+
+.button {
+  background-color: white;
+  border: 2px solid #008cba;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 16.5ch;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+#logoutButton {
+  background-color: #19647a;
+  text-align: left;
+  padding-left: 4ch;
+  padding-bottom: 4ch;
+  /* display: flex; */
+  align-content: left;
+  width: 16.5ch;
+  margin-top: 20px;
+}
+
+#myEmail {
+  padding-top: 15px;
+}

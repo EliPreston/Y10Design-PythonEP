@@ -25,6 +25,7 @@ function update() {
     });
   });
 
+  valueArray = [];
   const gp = document.getElementById("gp").value;
   const pts = document.getElementById("pts").value;
   const ason = document.getElementById("ason").value;
@@ -32,16 +33,32 @@ function update() {
   const pp = document.getElementById("pp").value;
   const sp = document.getElementById("sp").value;
 
-  const data = {
-    GamesPlayed: gp,
-    Points: pts,
-    ASON: ason,
-    AH: ah,
-    PuckPossession: pp,
-    SaveP: sp
-  };
+  valueArray.push(gp, pts, ason, ah, pp, sp);
+  console.log(valueArray);
 
-  ref.set(data);
+  count = 0;
+  for (i = 0; i < valueArray.length; i++) {
+    console.log(valueArray[i]);
+
+    if (valueArray[i] === "") {
+      alert("The database won't be updated if any of the text boxes are empty");
+      count += 1;
+    }
+  }
+
+  if (count === 0) {
+    const data = {
+      GamesPlayed: gp,
+      Points: pts,
+      ASON: ason,
+      AH: ah,
+      PuckPossession: pp,
+      SaveP: sp
+    };
+    ref.set(data);
+  }
+
+  // resets input fields
   document.getElementById("gp").value = "";
   document.getElementById("pts").value = "";
   document.getElementById("ason").value = "";
@@ -49,84 +66,123 @@ function update() {
   document.getElementById("pp").value = "";
   document.getElementById("sp").value = "";
 
-  alert("Data Updated");
-  window.location.reload();
   console.log("Updated");
+  alert("Data Updated");
+
+  window.location.reload();
 }
 
 function tableLoad() {
-  const teamSelect = document.getElementById("teamSelect");
-  const team = teamSelect.options[teamSelect.selectedIndex].value;
+  const database = firebase.database();
+  const myTable = document.getElementById("myTable");
 
-  const array = [];
+  stRef1 = database.ref("Team 1");
+  stRef1.once("value").then(_team => {
+    // console.log(_team.val());
+    const stats = _team.val();
+    // console.log(stats.AH);
+    // console.log(stats.ASON);
+    // console.log(stats.GamesPlayed);
+    // console.log(stats.Points);
+    // console.log(stats.PuckPossession);
+    // console.log(stats.SaveP);
 
-  const ref = firebase.database().ref(team);
-  ref.once("value").then(_team => {
-    _team.forEach(_teamStats => {
-      const teamStats = _teamStats.val();
-
-      console.log(typeof teamStats);
-      var obj = JSON.parse(teamStats);
-      console.log(obj);
-      array.push(teamStats);
-      //                                                      \\
-      //                                                      \\
-      //                                                      \\
-      //                                                      \\
-
-      // console.log(AGP, APTS, AASON, AAH, AP, ASP);
-    });
+    myTable.rows[1].cells[1].innerHTML = stats.AH;
+    myTable.rows[1].cells[2].innerHTML = stats.ASON;
+    myTable.rows[1].cells[3].innerHTML = stats.GamesPlayed;
+    myTable.rows[1].cells[4].innerHTML = stats.Points;
+    myTable.rows[1].cells[5].innerHTML = stats.PuckPossession;
+    myTable.rows[1].cells[6].innerHTML = "." + stats.SaveP;
   });
 
-  console.log(array);
-  // const arrayLength = array.length;
+  stRef2 = database.ref("Team 2");
+  stRef2.once("value").then(_team => {
+    // console.log(_team.val());
+    const stats = _team.val();
+    // console.log(stats.AH);
+    // console.log(stats.ASON);
+    // console.log(stats.GamesPlayed);
+    // console.log(stats.Points);
+    // console.log(stats.PuckPossession);
+    // console.log(stats.SaveP);
 
-  // for (var i = 0; i < arrayLength; i++);
-  // {
-  //   console.log(array[i]);
-  // }
-  // console.log(array);
+    myTable.rows[2].cells[1].innerHTML = stats.AH;
+    myTable.rows[2].cells[2].innerHTML = stats.ASON;
+    myTable.rows[2].cells[3].innerHTML = stats.GamesPlayed;
+    myTable.rows[2].cells[4].innerHTML = stats.Points;
+    myTable.rows[2].cells[5].innerHTML = stats.PuckPossession;
+    myTable.rows[2].cells[6].innerHTML = "." + stats.SaveP;
+  });
 
-  const AGP = document.getElementById("AGP");
-  const APTS = document.getElementById("APTS");
-  const AASON = document.getElementById("AASON");
-  const AAH = document.getElementById("AAH");
-  const AP = document.getElementById("AP");
-  const ASP = document.getElementById("ASP");
+  stRef3 = database.ref("Team 3");
+  stRef3.once("value").then(_team => {
+    // console.log(_team.val());
+    const stats = _team.val();
+    // console.log(stats.AH);
+    // console.log(stats.ASON);
+    // console.log(stats.GamesPlayed);
+    // console.log(stats.Points);
+    // console.log(stats.PuckPossession);
+    // console.log(stats.SaveP);
 
-  // ||||||||||||||||||||||||||||||||||||\\
+    myTable.rows[3].cells[1].innerHTML = stats.AH;
+    myTable.rows[3].cells[2].innerHTML = stats.ASON;
+    myTable.rows[3].cells[3].innerHTML = stats.GamesPlayed;
+    myTable.rows[3].cells[4].innerHTML = stats.Points;
+    myTable.rows[3].cells[5].innerHTML = stats.PuckPossession;
+    myTable.rows[3].cells[6].innerHTML = "." + stats.SaveP;
+  });
 
-  document.getElementById("AGP").value;
-  document.getElementById("APTS");
-  document.getElementById("AASON");
-  document.getElementById("AAH");
-  document.getElementById("AP");
-  document.getElementById("ASP");
+  stRef4 = database.ref("Team 4");
+  stRef4.once("value").then(_team => {
+    // console.log(_team.val());
+    const stats = _team.val();
+    // console.log(stats.AH);
+    // console.log(stats.ASON);
+    // console.log(stats.GamesPlayed);
+    // console.log(stats.Points);
+    // console.log(stats.PuckPossession);
+    // console.log(stats.SaveP);
+
+    myTable.rows[4].cells[1].innerHTML = stats.AH;
+    myTable.rows[4].cells[2].innerHTML = stats.ASON;
+    myTable.rows[4].cells[3].innerHTML = stats.GamesPlayed;
+    myTable.rows[4].cells[4].innerHTML = stats.Points;
+    myTable.rows[4].cells[5].innerHTML = stats.PuckPossession;
+    myTable.rows[4].cells[6].innerHTML = "." + stats.SaveP;
+  });
+
+  stRef5 = database.ref("Team 5");
+  stRef5.once("value").then(_team => {
+    // console.log(_team.val());
+    const stats = _team.val();
+    // console.log(stats.AH);
+    // console.log(stats.ASON);
+    // console.log(stats.GamesPlayed);
+    // console.log(stats.Points);
+    // console.log(stats.PuckPossession);
+    // console.log(stats.SaveP);
+
+    myTable.rows[5].cells[1].innerHTML = stats.AH;
+    myTable.rows[5].cells[2].innerHTML = stats.ASON;
+    myTable.rows[5].cells[3].innerHTML = stats.GamesPlayed;
+    myTable.rows[5].cells[4].innerHTML = stats.Points;
+    myTable.rows[5].cells[5].innerHTML = stats.PuckPossession;
+    myTable.rows[5].cells[6].innerHTML = "." + stats.SaveP;
+  });
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
 }
-
-// function tableLoad() {
-//   const fragment = document.createDocumentFragment();
-//   const table = document.createElement("table");
-
-//   const query = firebase.database().ref("Team 1");
-
-//   query.once("value").then(function(snapshot) {
-//     snapshot.forEach(function(childSnapshot) {
-//       var tr = document.createElement("tr");
-//       var trValues = [childSnapshot.key, childSnapshot.val()];
-
-//       for (var i = 0; i < trValues.length; i++) {
-//         var td = document.createElement("td");
-
-//         td.textContent = trValues[i];
-//         tr.appendChild(td);
-//       }
-
-//       table.appendChild(tr);
-//     });
-//   });
-
-//   fragment.appendChild(table);
-//   document.body.appendChild(fragment);
-//   console.log("bruh");
-// }

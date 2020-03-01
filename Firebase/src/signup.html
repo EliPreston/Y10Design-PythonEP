@@ -19,7 +19,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   </head>
 
-  <body>
+  <body class="bdy">
     <header>
       <a class="logoName">Team Stats</a>
       <nav>
@@ -29,13 +29,19 @@
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
-      <a class="contact" href="#">Contact</a>
+      <a
+        class="contact"
+        href="mailto:exampleEmail@gmail.com?subject=Important!&body=Hi!."
+        target="_blank"
+        rel="noopener noreferrer"
+        >Contact Us</a
+      >
     </header>
 
     <div class="flex-container">
       <div class="signup" href="login.html">Signup</div>
       <form class="input-parent">
-        <input
+        <!-- <input
           class="inputs"
           type="text"
           id="firstName"
@@ -46,7 +52,7 @@
           type="text"
           id="lastName"
           placeholder="Last Name"
-        />
+        /> -->
         <input class="inputs" type="email" id="email" placeholder="Email" />
         <input
           class="inputs"
