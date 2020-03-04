@@ -12,6 +12,8 @@
   firebase.initializeApp(config);
 })();
 
+// Checks if the user ID is valid, if yes it redirects to the stats page
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user == null) {
     console.log("Error");
@@ -23,6 +25,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     window.location.href = "stats.html";
   }
 });
+
+// Logs last user out if they are still logged in and resets password and email input boxes
 
 function loadIn() {
   document.getElementById("email").value = "";
@@ -42,6 +46,9 @@ function loadIn() {
   //     console.log("No user logged in");
   //   }
 }
+
+// Login function, logs last user out, when user inputs pw and email it checks for the length of
+// the password and email and only works if it the length is more than 4
 
 function login() {
   if (firebase.auth().currentUser) {
@@ -63,7 +70,8 @@ function login() {
       return;
     } //end password length check
 
-    // Sign in with email and pass.
+    // Signing in with email and password
+    // Checking whether inputted password and email match the database
 
     firebase
       .auth()
@@ -84,7 +92,7 @@ function login() {
   } //end toggle function
 }
 
-/////////////////// SIGNIN FUNCTION //////////////////
+/////////////////// SIGNIN FUNCTION WITH GMAIL //////////////////
 
 function signin() {
   const provider = new firebase.auth.GoogleAuthProvider();

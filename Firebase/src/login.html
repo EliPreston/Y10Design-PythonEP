@@ -19,6 +19,7 @@
     <script src="js/login.js"></script>
   </head>
 
+  <!-- When the page loads, the loadIn function is executed -->
   <body onload="loadIn ()">
     <header>
       <a class="logoName">Team Stats</a>
@@ -38,6 +39,7 @@
       >
     </header>
 
+    <!-- This is a html form which houses inputs and buttons -->
     <div class="flex-container">
       <div class="signup" href="Login.html">Login</div>
       <form class="input-parent">
@@ -48,14 +50,19 @@
           id="password"
           placeholder="Password"
         />
+
+        <!-- button that references the login function -->
         <button type="button" onclick="login()" class="loginbtn">
           Log In
         </button>
+
+        <!-- button that references the signup with gmail function -->
         <button type="button" onclick="signin()" class="loginbtn">
           Log in with Gmail
         </button>
       </form>
     </div>
   </body>
+
   <script src="js/login.js"></script>
 </html>

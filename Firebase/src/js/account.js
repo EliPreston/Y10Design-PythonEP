@@ -1,3 +1,5 @@
+//API Key allows me to access firebase
+
 (function() {
   var config = {
     apiKey: "AIzaSyCFMw8Iu6LR93V03f-KiZpWyaGddSmJm3U",
@@ -12,6 +14,7 @@
   firebase.initializeApp(config);
 })();
 
+// Gets user ID and user email and inserting them into the divs with document.getElementById
 firebase.auth().onAuthStateChanged(function(user) {
   if (user == null) {
     console.log("Error");
@@ -24,10 +27,12 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("userinfo2").innerHTML = email;
 
     // you can also get .displayName, .photoURL, .email
-    console.log(userId);
-    console.log(email);
+    // console.log(userId);
+    // console.log(email);
   }
 });
+
+// Logs user out when button is pressed
 
 function accountLogout() {
   console.log("logging out");

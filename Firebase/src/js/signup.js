@@ -12,6 +12,8 @@
   firebase.initializeApp(config);
 })();
 
+// Signup function, checks length of password and email
+
 function signup() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
@@ -24,8 +26,10 @@ function signup() {
     return;
   }
 
+  // Create a user with an email and password, seperate from gmail login
+  // makes sure password is strong (at least 6 characters) and catches any errors
+
   var signedin = "hello";
-  // Create user with email and pass.
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -43,6 +47,8 @@ function signup() {
       console.log("Error");
     });
 }
+
+// UNEEDED CODE BELOW
 
 // const signup = () => {
 //   let newUser = undefined;

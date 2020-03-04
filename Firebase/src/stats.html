@@ -34,10 +34,9 @@
       rel="noopener noreferrer"
       >Contact Us</a
     >    </header>
-    <!-- <div class="flex-container01">
-      <p>TEXT</p>
-      <p>TEXT</p>
-    </div> -->
+
+
+    <!-- This is the table for the values  -->
     <div class="flex-container02">
       <table id="myTable">
         <tr>
@@ -96,12 +95,10 @@
         </tr>
       </table>
     </div>
-    <!-- <div class="flex-container03">
-      <button type="button" class="btn btn-outline-dark">
-        Update Database
-      </button>
-    </div> -->
 
+
+
+    <!-- Drop down menu for each team, and inputs for he values, -->
     <div class="flex-container04">
       <select class="select" id="teamSelect">
         <option value="Team 1">Leaside</option>
@@ -117,15 +114,16 @@
       <input class="inputs" type="text" id="pp" placeholder="Puck Possession" />
       <input class="inputs" type="text" id="sp" placeholder="Save %" />
 
+
+      <!-- References the update function  -->
       <button type="button" onclick="update()" class="btns button">
         Update Database
       </button>
-      
     </div>
 
-    <div class="flex-container05">
-  
 
+<!-- Another table that is just providing information  -->
+    <div class="flex-container05">
       <table>
         <tr>
           <th>Stat Abbreviation</th>
@@ -146,19 +144,17 @@
         </tr>
         <tr>
           <td>P.P</td>
-          <td>This is an abbreviation for Puck Percentage (averaged), this is an indicator for how much on average a tean has the puck.</td>
+          <td>This is an abbreviation for Puck Percentage (averaged), this is an indicator for how much on average a team has the puck.</td>
         </tr>
         <tr>
           <td>Save %</td>
           <td>This is simply the save percentage.</td>
         </tr>
-          
     </div>         
 
 
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
-    <script src="main.js"></script>
     <script src="js/stats.js"></script>
   </body>
 </html>

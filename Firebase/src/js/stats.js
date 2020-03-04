@@ -11,9 +11,12 @@ var config = {
 
 firebase.initializeApp(config);
 
+// Data Table Input Values Code
+
 function update() {
   var database = firebase.database();
 
+  // gets which team is selected from the dropdown menu
   const teamSelect = document.getElementById("teamSelect");
   const team = teamSelect.options[teamSelect.selectedIndex].value;
   console.log(team);
@@ -25,6 +28,7 @@ function update() {
     });
   });
 
+  // gets value of input boxes and pushes it to an array
   valueArray = [];
   const gp = document.getElementById("gp").value;
   const pts = document.getElementById("pts").value;
@@ -36,6 +40,7 @@ function update() {
   valueArray.push(gp, pts, ason, ah, pp, sp);
   console.log(valueArray);
 
+  // this loops through the array and gets each individual number in the array
   count = 0;
   for (i = 0; i < valueArray.length; i++) {
     console.log(valueArray[i]);
@@ -72,20 +77,25 @@ function update() {
   window.location.reload();
 }
 
+// loading data from database into the table when page loaded
+
 function tableLoad() {
   const database = firebase.database();
   const myTable = document.getElementById("myTable");
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // References the database for team 1 values in this case,
+  // once values have been gotten they are in an array which we can console.log if we want to see the array.
+  // Then it gets the cells for row 1 of the table (index starting at 0)
+  // and puts the value in that cell.
+  // This process is repeated for each row/team in the table, and this can be expanded
+  // pretty easily to encompass more teams.
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   stRef1 = database.ref("Team 1");
   stRef1.once("value").then(_team => {
     // console.log(_team.val());
     const stats = _team.val();
-    // console.log(stats.AH);
-    // console.log(stats.ASON);
-    // console.log(stats.GamesPlayed);
-    // console.log(stats.Points);
-    // console.log(stats.PuckPossession);
-    // console.log(stats.SaveP);
 
     myTable.rows[1].cells[1].innerHTML = stats.AH;
     myTable.rows[1].cells[2].innerHTML = stats.ASON;
@@ -99,12 +109,6 @@ function tableLoad() {
   stRef2.once("value").then(_team => {
     // console.log(_team.val());
     const stats = _team.val();
-    // console.log(stats.AH);
-    // console.log(stats.ASON);
-    // console.log(stats.GamesPlayed);
-    // console.log(stats.Points);
-    // console.log(stats.PuckPossession);
-    // console.log(stats.SaveP);
 
     myTable.rows[2].cells[1].innerHTML = stats.AH;
     myTable.rows[2].cells[2].innerHTML = stats.ASON;
@@ -118,12 +122,6 @@ function tableLoad() {
   stRef3.once("value").then(_team => {
     // console.log(_team.val());
     const stats = _team.val();
-    // console.log(stats.AH);
-    // console.log(stats.ASON);
-    // console.log(stats.GamesPlayed);
-    // console.log(stats.Points);
-    // console.log(stats.PuckPossession);
-    // console.log(stats.SaveP);
 
     myTable.rows[3].cells[1].innerHTML = stats.AH;
     myTable.rows[3].cells[2].innerHTML = stats.ASON;
@@ -137,12 +135,6 @@ function tableLoad() {
   stRef4.once("value").then(_team => {
     // console.log(_team.val());
     const stats = _team.val();
-    // console.log(stats.AH);
-    // console.log(stats.ASON);
-    // console.log(stats.GamesPlayed);
-    // console.log(stats.Points);
-    // console.log(stats.PuckPossession);
-    // console.log(stats.SaveP);
 
     myTable.rows[4].cells[1].innerHTML = stats.AH;
     myTable.rows[4].cells[2].innerHTML = stats.ASON;
@@ -156,12 +148,6 @@ function tableLoad() {
   stRef5.once("value").then(_team => {
     // console.log(_team.val());
     const stats = _team.val();
-    // console.log(stats.AH);
-    // console.log(stats.ASON);
-    // console.log(stats.GamesPlayed);
-    // console.log(stats.Points);
-    // console.log(stats.PuckPossession);
-    // console.log(stats.SaveP);
 
     myTable.rows[5].cells[1].innerHTML = stats.AH;
     myTable.rows[5].cells[2].innerHTML = stats.ASON;
@@ -170,19 +156,4 @@ function tableLoad() {
     myTable.rows[5].cells[5].innerHTML = stats.PuckPossession;
     myTable.rows[5].cells[6].innerHTML = "." + stats.SaveP;
   });
-
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  }
 }
