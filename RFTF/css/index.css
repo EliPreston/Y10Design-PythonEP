@@ -1,0 +1,49 @@
+.body {
+  background-color: #12161d;
+  margin: 0px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  /* background-color: rgb(138, 12, 37); */
+  background-color: #222936;
+}
+
+.nav li {
+  padding: 1em;
+  font-size: 18px;
+  list-style-type: none;
+  font-family: Lucida Console, Courier, monospace;
+  font-weight: 450;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.nav li a:hover {
+  color: black;
+}
+
+.timeline-content {
+  background-color: #25529e;
+  display: flex;
+  justify-content: center;
+  padding: 2ch;
+}
+
+.timeline {
+  width: 50%;
+  text-align: center;
+}
+
+.content {
+  width: 50%;
+  text-align: center;
+}
