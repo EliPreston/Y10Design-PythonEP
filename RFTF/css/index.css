@@ -31,19 +31,91 @@
   color: black;
 }
 
-.timeline-content {
-  background-color: #25529e;
+.header {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px 0 40px;
+  padding: 0;
+  color: #fff;
+}
+
+/**/
+/* Found; https://codepen.io/jm/pen/GlICH */
+/**/
+
+.container {
+  background-color: #12161d;
+  width: 50%;
+  overflow: auto;
+  padding: 2%;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btns {
+  border: 0;
+  padding: 0;
+  font-size: 18px;
+  background-color: #12161d;
+  color: #fff;
+  font-family: Lucida Console, Courier, monospace;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+}
+
+.btns:hover {
+  color: black;
+}
+
+.right-content,
+.left-content {
+  float: left;
+  display: block;
+  width: 45%;
+  padding: 1% 2%;
+}
+.left-content {
+  border-right: 5px dotted #666;
+  text-align: right;
+}
+.left-content p {
+  margin: 150px 0 0;
+}
+.right-content p {
+  margin: 80px 0 150px;
+}
+.container p {
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7 ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.left-content .more-padding {
+  padding-right: 100px;
+}
+.right-content .more-padding {
+  padding-left: 100px;
+}
+
+/**/
+/* Found; https://codepen.io/jm/pen/GlICH */
+/**/
+
+.bigContainer {
   display: flex;
-  justify-content: center;
-  padding: 2ch;
 }
 
-.timeline {
+.information {
   width: 50%;
-  text-align: center;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 
-.content {
-  width: 50%;
-  text-align: center;
+.infoStick {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 35%;
 }

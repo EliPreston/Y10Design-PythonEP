@@ -1,0 +1,33 @@
+<div class="etimeline-content">
+        <div class="etimeline">
+          <div>Timeline</div>
+        </div>
+        <div class="econtent">
+          <div>Content</div>
+          <div>More Content</div>
+        </div>
+    </div>
+
+
+.etimeline-content {
+  justify-content: center;
+  margin: 2ch;
+  /* padding: 2ch; */
+  /* display: flex; */
+  /* background-color: #25529e; */
+}
+
+.etimeline {
+  /* width: 50%; */
+  text-align: center;
+  background-color: thistle;
+  padding: 1ch;
+  margin-bottom: 2ch;
+}
+
+.econtent {
+  /* width: 50%; */
+  text-align: center;
+  background-color: teal;
+  padding: 1ch;
+}
