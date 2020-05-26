@@ -31,3 +31,197 @@
   background-color: teal;
   padding: 1ch;
 }
+
+
+
+
+/* .bigContainer {
+  display: flex;
+}
+
+.information {
+  width: 50%;
+  padding: 2%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.infoStick {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 35%;
+} */
+
+    <!-- <div class="information">
+      <div class="infoStick">
+        <h2 id="infoH">Information Below</h2>
+        <p id="infoC"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra eleifend est et luctus. Pellentesque turpis nisi, iaculis quis condimentum eu, commodo quis nisl. Quisque molestie, nibh quis ornare vestibulum, felis nisl pretium odio, sed consequat magna lacus et turpis. Aenean scelerisque fringilla convallis. Praesent vitae finibus libero. Ut nec nibh tristique, molestie erat ac, consectetur neque. Quisque a diam quis lorem scelerisque ullamcorper at sed odio. Sed vulputate tellus sit amet dui finibus, non consectetur mi semper. Ut in ornare leo. Quisque id dolor eleifend, aliquet magna eu, dignissim erat. Sed ornare, purus at elementum blandit, metus odio viverra mi, a pharetra risus tortor in erat. Cras sollicitudin ipsum nec lacus aliquam condimentum. Etiam viverra urna ut lacus finibus, sed tempor turpis mollis. Donec pretium hendrerit est, non vehicula diam pellentesque nec. </p>
+      </div>
+    </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+
+
+    <div class="container">
+      <div class="left-content">
+        <p><button class="btns" onclick="getInfo()">Content 02</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 04</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 06</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 08</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 10</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 12</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 14</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 16</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 18</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 20</button></p>
+      </div>
+      <div class="right-content">
+        <p><button class="btns" onclick="getInfo()">Content 01</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 03</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 05</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 07</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 09</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 13</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 11</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 15</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 17</button></p>
+        <p><button class="btns" onclick="getInfo()">Content 19</button></p>
+      </div>
+    </div>
+
+
+/* .left-content p {
+  margin: 150px 0 0;
+}
+.right-content p {
+  margin: 80px 0 150px;
+}
+.container p {
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7 ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+} */
+
+
+
+    <div class="container">
+      <div class="left-content">
+        <div>Content 02</div>
+        <div>Content 04</div>
+        <div>Content 06</div>
+        <div>Content 08</div>
+        <div>Content 10</div>
+        <div>Content 12</div>
+        <div>Content 14</div>
+        <div>Content 16</div>
+        <div>Content 18</div>
+        <div>Content 20</div>
+      </div>
+      <div class="right-content">
+        <div>Content 01</div>
+        <div>Content 03</div>
+        <div>Content 05</div>
+        <div>Content 07</div>
+        <div>Content 09</div>
+        <div>Content 13</div>
+        <div>Content 11</div>
+        <div>Content 15</div>
+        <div>Content 17</div>
+        <div>Content 19</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+        <div class="container">
+      <div class="left-content">
+        <div class="popup" onclick="myFunction()">
+          Content 02
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 04
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 06
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 08
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 10
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 12
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 14
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 16
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 18
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 20
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="popup" onclick="myFunction()">
+          Content 01
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 03
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 05
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 07
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 09
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 13
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 11
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 15
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 17
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+        <div class="popup" onclick="myFunction()">
+          Content 19
+          <span class="popuptext" id="myPopup">A Simple Popup!</span>
+        </div>
+      </div>
+    </div>

@@ -5,14 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Comment Section</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="/Users/eli.preston/Desktop/GitRepo/Y10Design-PythonEP/RFTF/css/cs.css" />
-    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/cs.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+    <script src="JS/cs.js"></script>
   </head>
-  <body class="body">
+  <body class="body" onload="initializeApp()">
     <div class="nav">
       <li><a href="index.html">Timeline</a></li>
       <li><a href="cs.html">Questions</a></li>
     </div>
+
+    <h2>Question Page</h2>
+    <div>
+      <input type="holder" id="name" value="Name" placeholder="Name" />
+      <input type="text" id="comment" value="Comment" placeholder="Comment" />
+      <button onclick="setData()">Set Data</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <button onclick="getData()">Get data</button>
+      <p>Comments & Questions:</p>
+      <ul id="commentList" style="list-style-type: none;"></ul>
     </div>
   </body>
 </html>
