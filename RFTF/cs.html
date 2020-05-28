@@ -12,6 +12,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
     <script src="JS/cs.js"></script>
   </head>
+
+  <!-- In the body tag the onload means that the function is called as soon as the page loads -->
   <body class="body" onload="initializeApp()">
     <div class="nav">
       <li><a href="index.html">Timeline</a></li>
@@ -26,6 +28,7 @@
       </p>
     </div>
 
+    <!-- This is the set of input boxes along with the button that allows users to post comments -->
     <div class="container">
       <form>
         <label>Name;</label>
@@ -41,9 +44,9 @@
       <button id="setBtn" onclick="setData()">Post</button>
     </div>
 
+    <!-- This button, when click, calls the "getData" function, which then populates the list with id "commentList" -->
     <div class="csq">
       <button id="getBtn" onclick="getData()">Comments & Questions:</button>
-      <!-- <p>Comments & Questions:</p> -->
       <ul id="commentList" style="list-style-type: none;"></ul>
     </div>
   </body>

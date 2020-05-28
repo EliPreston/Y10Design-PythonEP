@@ -1,5 +1,11 @@
+// These are the functions called when a date is pressed on the timeline.
+// Each of the below functions are the same in format, and only differ in content.
+
 function getInfo1() {
+  // This gets the element with id "infoH", and replaces the text.
   document.getElementById("infoH").textContent = "Spears";
+
+  // This gets the element with id "infoC", and replaces the text.
   document.getElementById("infoC").textContent =
     "The earliest evidence of humans using spears, in a part of Germany now near Schöningen. However, one population of modern chimpanzees in Senegal uses spears to hunt bushbabies, suggesting the technology may have been used by our most primitive ancestors.";
 }
