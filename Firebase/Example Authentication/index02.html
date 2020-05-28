@@ -1,0 +1,143 @@
+<!-- Welcome to some sample code to control your Firebase Database -->
+<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
+<!-- EMAIL/PASSWORD SIGN-IN and SIGN-UP: JAN 30TH, 2020 -->
+<html>
+  <head>
+    <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!-- Add SDKs for Firebase products that you want to use 
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+  </head>
+
+  <body>
+    <h1 id="uid"></h1>
+
+    <!-- HERE IS YOUR HTML CODE TO CREATE YOUR BUTTONS -->
+    <h3>
+      A demonstration of how to sign-in to the the database using an email and
+      password
+    </h3>
+
+    <button onclick="handleSignUp()">Sign Up</button>
+    <button onclick="toggleSignIn()">Sign In</button>
+
+    <input type="text" id="email" value="Enter Email" />
+    <input type="text" id="password" value="Enter Password" />
+  </body>
+
+  <!-- HERE IS THE JAVASCRIPT TO CONNECT TO YOUR FIREBASE -->
+  <script>
+    // Variables created here to be used throughout the program
+
+    var userId = document.getElementById("uid").innerHTML;
+
+    // Your web app's Firebase configuration that we copy-and-paste from
+    // the Firebase setup
+    var config = {
+      apiKey: "AIzaSyCFMw8Iu6LR93V03f-KiZpWyaGddSmJm3U",
+      authDomain: "versace-9358b.firebaseapp.com",
+      databaseURL: "https://versace-9358b.firebaseio.com",
+      projectId: "versace-9358b",
+      storageBucket: "versace-9358b.appspot.com",
+      messagingSenderId: "327362565584",
+      appId: "1:327362565584:web:e0f5dc27ac440b614315d5",
+      measurementId: "G-H2Q57Q6XTB"
+    };
+
+    firebase.initializeApp(config);
+    //firebase.analytics();
+
+    // Authentication Check: to see if you are logged in
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user == null) {
+        document.getElementById("uid").innerHTML = "not logged in";
+        return;
+      } else {
+        userId = user.uid; // you can also get .displayName, .photoURL, .email
+        document.getElementById("uid").innerHTML = userId; // display Google uid on page
+      } // end user null check
+    }); // end check auth state
+
+    /**************************************************************************
+     * Handles the SIGN-IN button press.
+     **************************************************************************/
+    function toggleSignIn() {
+      if (firebase.auth().currentUser) {
+        firebase.auth().signOut();
+      } else {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Check for email length
+        if (email.length < 4) {
+          alert("Please enter an email address.");
+          return;
+        } //end email length check
+
+        // Check for password length
+        if (password.length < 4) {
+          alert("Please enter a password.");
+          return;
+        } //end password length check
+
+        // Sign in with email and pass.
+
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .catch(function(error) {
+            // Error Handler
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            if (errorCode === "auth/wrong-password") {
+              alert("Wrong password.");
+            } else {
+              alert(errorMessage);
+            }
+
+            console.log(error);
+          }); //end firebase.auth()
+      } //end if-else
+    } //end toggle function
+
+    /**************************************************************************
+     * Handles the SIGN-UP button press.
+     **************************************************************************/
+    function handleSignUp() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      if (email.length < 4) {
+        alert("Please enter an email address.");
+        return;
+      }
+      if (password.length < 4) {
+        alert("Please enter a password.");
+        return;
+      }
+
+      // Create user with email and pass.
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .catch(function(error) {
+          // Handle Errors here...
+          var errorCode = error.code;
+          var errorMessage = error.message;
+
+          if (errorCode == "auth/weak-password") {
+            alert("The password is too weak.");
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+        });
+    }
+  </script>
+</html>

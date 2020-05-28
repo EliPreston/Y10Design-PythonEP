@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Index</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="div1">
+      <h2 id="uid"></h2>
+
+      <h3 id="wid">
+        Welcome, please log in.
+      </h3>
+
+      <input type="text" id="newName" placeholder="Enter name" />
+
+      <button onclick="signin()" class="btn btn-outline-dark">
+        Log in with Gmail
+      </button>
+      <button onclick="setData()" class="btn btn-outline-dark">Add data</button>
+      <button onclick="getData()" class="btn btn-outline-dark">Get data</button>
+    </div>
+
+    <div id="info">
+      <p id="myName"></p>
+      <p id="myData"></p>
+    </div>
+  </body>
+
+  <script>
+    var config = {
+      apiKey: "AIzaSyCFMw8Iu6LR93V03f-KiZpWyaGddSmJm3U",
+      authDomain: "versace-9358b.firebaseapp.com",
+      databaseURL: "https://versace-9358b.firebaseio.com",
+      projectId: "versace-9358b",
+      storageBucket: "versace-9358b.appspot.com",
+      messagingSenderId: "327362565584",
+      appId: "1:327362565584:web:e0f5dc27ac440b614315d5",
+      measurementId: "G-H2Q57Q6XTB",
+    };
+    firebase.initializeApp(config);
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user == null) {
+        // document.getElementById("uid").innerHTML = "Unable to locate user ID";
+        console.log("not logged in");
+        return;
+      } else {
+        userId = user.uid;
+        // document.getElementById("uid").innerHTML = "You are logged in";
+        document.getElementById("wid").innerHTML = "You are logged in";
+        console.log(userId);
+        console.log("You are logged in");
+      }
+    });
+
+    /////////////////// FUNCTIONS ///////////////////
+    function getData() {
+      var userId = document.getElementById("uid").innerHTML;
+      firebase
+        .database()
+        .ref("/" + userId)
+        .once("value", function (snapshot) {
+          document.getElementById("myData").innerHTML = snapshot.val().teacher;
+          console.log(snapshot.val().teacher);
+          console.log(snapshot.val().email);
+        });
+    }
+
+    function setData() {
+      var x = document.getElementById("newName").value;
+      var x_email = x + "@gmail.com";
+
+      document.getElementById("myName").innerHTML = x;
+      firebase
+        .database()
+        .ref("/" + userId)
+        .set({
+          teacher: x,
+          email: x_email,
+        });
+    }
+
+    function signin() {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithRedirect(provider)
+        .then(function (result) {
+          window.location.replace("fbtest.html");
+        });
+    }
+  </script>
+</html>

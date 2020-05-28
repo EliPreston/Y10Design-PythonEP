@@ -23,15 +23,35 @@ function setData() {
   var name = document.getElementById("name").value;
   var comment = document.getElementById("comment").value;
 
-  var data = {
-    Name: name,
-    Comment: comment,
-  };
+  valueArray = [];
+  const nm = document.getElementById("name").value;
+  const cmnt = document.getElementById("comment").value;
+
+  valueArray.push(nm, cmnt);
+
+  count = 0;
+  for (i = 0; i < valueArray.length; i++) {
+    if (valueArray[i] === "") {
+      alert(
+        "You can't comment if one, or both, of the input boxes are empty. Thank you."
+      );
+      count += 1;
+    }
+  }
+
+  if (count === 0) {
+    var data = {
+      Name: name,
+      Comment: comment,
+    };
+  }
 
   ref.push(data);
 
   document.getElementById("name").value = "";
   document.getElementById("comment").value = "";
+
+  // location.reload();
 }
 
 function getData() {

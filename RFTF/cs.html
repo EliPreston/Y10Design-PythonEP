@@ -18,16 +18,32 @@
       <li><a href="cs.html">Questions</a></li>
     </div>
 
-    <h2>Question Page</h2>
-    <div>
-      <input type="holder" id="name" value="Name" placeholder="Name" />
-      <input type="text" id="comment" value="Comment" placeholder="Comment" />
-      <button onclick="setData()">Set Data</button>
+    <div class="wlcm">
+      <h2>Welcome to the comment section!</h2>
+      <p>
+        If you have any questions or comments about anything, please feel free
+        to post them below!
+      </p>
     </div>
 
-    <div style="margin-top: 20px;">
-      <button onclick="getData()">Get data</button>
-      <p>Comments & Questions:</p>
+    <div class="container">
+      <form>
+        <label>Name;</label>
+        <input type="text" id="name" value="Name" placeholder="Name" /><br />
+        <label>Commment Or Question;</label>
+        <input
+          type="text"
+          id="comment"
+          value="Comment"
+          placeholder="Comment"
+        /><br />
+      </form>
+      <button id="setBtn" onclick="setData()">Post</button>
+    </div>
+
+    <div class="csq">
+      <button id="getBtn" onclick="getData()">Comments & Questions:</button>
+      <!-- <p>Comments & Questions:</p> -->
       <ul id="commentList" style="list-style-type: none;"></ul>
     </div>
   </body>
